@@ -4,8 +4,8 @@ class HubspotAPI {
     constructor(config, secret) {
         this.config = config
         this.secret = secret
-        this.apiKey = this.secret['hubspot-basic_api_key']
-        this.hubspotClient = new hubspot.Client({ apiKey: this.apiKey })
+        this.apiKey = this.secret['hubspot_api_key']
+        this.hubspotClient = new hubspot.Client({ accessToken: process.env.HUBSPOT_TOKEN })
     }
 
     create = async function(entity, record) {
